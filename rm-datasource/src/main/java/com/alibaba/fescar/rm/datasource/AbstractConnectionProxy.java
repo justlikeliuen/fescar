@@ -97,6 +97,11 @@ public abstract class AbstractConnectionProxy implements Connection {
         return dbType;
     }
 
+    /**
+     * 这里两个statement都被代理了
+     * @return
+     * @throws SQLException
+     */
     @Override
     public Statement createStatement() throws SQLException {
         Statement targetStatement = getTargetConnection().createStatement();

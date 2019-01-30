@@ -42,6 +42,11 @@ import org.slf4j.LoggerFactory;
  * @DateTime: 2018 /10/10 14:28
  * @FileName: EnhancedServiceLoader
  * @Description:
+ *              EnhancedServiceLoader
+ *                      <-
+ *                          com.alibaba.fescar.core.context.ContextCoreLoader
+ *                               <-
+ *                                      com.alibaba.fescar.core.context.RootContext
  */
 public class EnhancedServiceLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(EnhancedServiceLoader.class);

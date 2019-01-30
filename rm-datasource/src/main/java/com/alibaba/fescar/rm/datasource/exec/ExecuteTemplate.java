@@ -63,6 +63,9 @@ public class ExecuteTemplate {
                                                      StatementCallback<T, S> statementCallback,
                                                      Object... args) throws SQLException {
 
+        /**
+         * KP 核心运行代码
+         */
         if (!RootContext.inGlobalTransaction()) {
             // Just work as original statement
             return statementCallback.execute(statementProxy.getTargetStatement(), args);

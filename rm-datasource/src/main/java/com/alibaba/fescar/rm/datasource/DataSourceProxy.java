@@ -81,6 +81,10 @@ public class DataSourceProxy extends AbstractDataSourceProxy implements Resource
     public ConnectionProxy getConnection() throws SQLException {
         assertManaged();
         Connection targetConnection = targetDataSource.getConnection();
+        /**
+         * 这里使用 com.alibaba.fescar.rm.datasource.ConnectionProxy
+         * 来代理普通的connect
+         */
         return new ConnectionProxy(this, targetConnection, targetDataSource.getDbType());
     }
 

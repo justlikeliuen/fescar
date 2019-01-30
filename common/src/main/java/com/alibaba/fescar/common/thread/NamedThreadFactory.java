@@ -31,6 +31,10 @@ import io.netty.util.concurrent.FastThreadLocalThread;
  * @Description:
  */
 public class NamedThreadFactory implements ThreadFactory {
+    /**
+     * NamedThreadFactory 是Fescar御用的ThreadFactory,
+     * java.util.concurrent.ThreadFactory 为java提供的ThreadFactory接口
+     */
     private final AtomicInteger counter = new AtomicInteger(0);
     private final String prefix;
     private final int totalSize;
@@ -65,6 +69,12 @@ public class NamedThreadFactory implements ThreadFactory {
         if (totalSize > 1) {
             name += "_" + totalSize;
         }
+
+        /**
+         * 注意这里使用的是io.netty.util.concurrent.FastThreadLocalThread 来新建线程
+         * 主要原因是为了配合FastThreadLocalThread的 FastThreadLocal和 FastThreadLocalMap
+         * 可以去看netty的源码对FastThreadLocalThread的分析
+         */
         Thread thread = new FastThreadLocalThread(r, name);
 
         thread.setDaemon(makeDaemons);

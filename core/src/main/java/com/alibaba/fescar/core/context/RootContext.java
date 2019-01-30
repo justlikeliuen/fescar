@@ -71,7 +71,7 @@ public class RootContext {
 
     /**
      * In global transaction boolean.
-     *
+     * 如果在一个全局事务中的话，可以拿到 KEY_XID
      * @return the boolean
      */
     public static boolean inGlobalTransaction() {
