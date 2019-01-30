@@ -16,10 +16,6 @@
 
 package com.alibaba.fescar.rm.datasource.exec;
 
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
-
 import com.alibaba.fescar.core.context.RootContext;
 import com.alibaba.fescar.rm.datasource.StatementProxy;
 import com.alibaba.fescar.rm.datasource.sql.SQLRecognizer;

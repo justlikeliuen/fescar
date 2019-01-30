@@ -16,8 +16,6 @@
 
 package com.alibaba.fescar.core.message;
 
-import java.nio.ByteBuffer;
-
 import com.alibaba.fescar.core.protocol.ResultCode;
 import com.alibaba.fescar.core.protocol.transaction.BranchRegisterResponse;
 
