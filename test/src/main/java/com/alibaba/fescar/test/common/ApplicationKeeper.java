@@ -42,6 +42,10 @@ public class ApplicationKeeper {
         addShutdownHook(applicationContext);
     }
 
+    /**
+     * java.lang.Runtime#addShutdownHook(java.lang.Thread) jvm shutdown 之前执行
+     * @param applicationContext
+     */
     private void addShutdownHook(final AbstractApplicationContext applicationContext) {
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
